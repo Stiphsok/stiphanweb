@@ -1,0 +1,10 @@
+services:
+  stiphantube:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      AUTH_SECRET: ${AUTH_SECRET}
+      YTDLP_BIN: yt-dlp
+    restart: unless-stopped
